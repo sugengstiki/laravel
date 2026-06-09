@@ -14,6 +14,29 @@ new class extends Component
     public $showModal = false;
 
     public $message = '';
+
+    public $deleteId;
+    public $showDeleteNotif = false;
+
+    public function confirmDelete($id)
+    {
+        $this->deleteId = $id;
+        $this->showDeleteNotif = true;
+    }
+
+    public function deleteFeedback()
+    {
+        Feedback::find($this->deleteId)->delete();
+        $this->showDeleteNotif = false;
+        $this->deleteId = null;
+        $this->message = 'Feedback berhasil dihapus.';
+    }
+    public function cancelDelete()
+    {
+        $this->deleteId = null;
+        $this->showDeleteNotif = false;
+    }
+
     #[On('pesan')]
     public function pesan($message)
     {
@@ -54,6 +77,25 @@ new class extends Component
         {{ $this->message }}
     </div>
     @endif
+
+    <div wire:show="showDeleteNotif" class="fixed inset-0 bg-gray-600/80
+overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-6 max-w-md">
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-xl font-bold text-gray-800">Hapus Feedback</h2>
+                    <p class="text-gray-600 py-2">Apakah Anda yakin ingin menghapus feedback
+                        ini?</p>
+                    <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" wire:click="cancelDelete">
+                        Batal
+                    </button>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" wire:click="deleteFeedback">
+                        Hapus
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <button wire:click="tambah" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Tambah Feedback
     </button>
@@ -84,7 +126,7 @@ new class extends Component
                     <button wire:click="edit({{ $item->id }})" class="text-blue-500 hover:text-blue-700">
                         Edit
                     </button>
-                    <button wire:click="delete({{ $item->id }})" class="ml-2 text-red-500 hover:text-red-700">
+                    <button wire:click="confirmDelete({{ $item->id }})" class="ml-2 text-red-500 hover:text-red-700">
                         Hapus
                     </button>
                 </td>
