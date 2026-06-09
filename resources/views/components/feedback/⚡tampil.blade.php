@@ -2,19 +2,23 @@
 
 use Livewire\Attributes\Computed;
 use Livewire\Component;
+use Livewire\WithoutUrlPagination;
+use Livewire\WithPagination;
 
 new class extends Component
 {
+    use WithPagination, WithoutUrlPagination;
     #[Computed()]
     public function feedbacks()
     {
-        return \App\Models\Feedback::latest()->get();
+        return \App\Models\Feedback::latest()->paginate(10);
     }
 };
 ?>
 
 <div>
     {{-- Simplicity is an acquired taste. - Katharine Gerould --}}
+    <div class="mt-4">{{ $this->feedbacks->links(data: ['scrollTo' => false]) }}</div>
     <table class="min-w-full bg-white border border-gray-200 rounded shadow mt-4">
         <thead class="bg-gray-200 border-b border-gray-300 text-sm uppercase font-semibold">
             <tr class="text-gray-700 h-12">
@@ -33,5 +37,5 @@ new class extends Component
             @endforeach
         </tbody>
     </table>
-
+    
 </div>
