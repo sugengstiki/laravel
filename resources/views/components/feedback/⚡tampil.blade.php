@@ -113,6 +113,7 @@ overflow-y-auto h-full w-full">
                 <th>Nama</th>
                 <th>Email</th>
                 <th>Feedback</th>
+                <th>Gambar</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -122,6 +123,11 @@ overflow-y-auto h-full w-full">
                 <td class="px-6 py-4 whitespace-nowrap">{{ $item->name }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ $item->email }}</td>
                 <td class="px-6 py-4">{{ $item->feedback }}</td>
+                <td class="px-6 py-4">
+                    @if($item->gambar)
+                        <img src="{{ asset('storage/img/' . $item->gambar) }}" alt="Gambar Feedback" class="h-20 w-auto rounded">
+                    @endif
+                </td>
                 <td>
                     <button wire:click="edit({{ $item->id }})" class="text-blue-500 hover:text-blue-700">
                         Edit
