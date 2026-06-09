@@ -8,7 +8,7 @@ use Livewire\Component;
 new class extends Component
 {
     #[Modelable]    
-    public $editId;
+    public $editId;    
 
     #[Validate('required|string|min:3|max:255', as:'Nama')]
     public $name;
@@ -48,12 +48,14 @@ new class extends Component
             ]);
         }
         $this->reset();
+        $this->dispatch('closeModal')->to('feedback.tampil');
         // session()->flash('message', 'Feedback berhasil dikirim!');
     }
 
     public function resetForm()
     {
         $this->reset();
+        $this->dispatch('closeModal')->to('feedback.tampil');
     }
 
     //
