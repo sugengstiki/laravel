@@ -13,6 +13,13 @@ new class extends Component
     public $editId;
     public $showModal = false;
 
+    public $message = '';
+    #[On('pesan')]
+    public function pesan($message)
+    {
+        $this->message = $message;
+    }
+
     #[On('closeModal')]
     public function closeModal()
     {
@@ -42,12 +49,20 @@ new class extends Component
 
 <div>
     {{-- Simplicity is an acquired taste. - Katharine Gerould --}}
-
+    @if($this->message)
+    <div class="mb-4 p-4 bg-green-100 text-green-800 rounded">
+        {{ $this->message }}
+    </div>
+    @endif
     <button wire:click="tambah" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Tambah Feedback
     </button>
-    <div wire:show="showModal">
-        <livewire:feedback.form wire:model="editId" isEditing="{{ $editId !== null }}" />
+    <div wire:show="showModal" class="fixed inset-0 bg-gray-600/80 overflow-y-auto h-full w-full">
+        <div class="relative top-20 mx-auto p-6 max-w-md">
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <livewire:feedback.form wire:model="editId" isEditing="{{ $editId !== null }}" />
+            </div>
+        </div>
     </div>
     <div class="mt-4">{{ $this->feedbacks->links(data: ['scrollTo' => false]) }}</div>
     <table class="min-w-full bg-white border border-gray-200 rounded shadow mt-4">
