@@ -7,52 +7,201 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Praktikum Pemrograman Web lanjut
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel 13 & Livewire 4 Learning Series
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Repository ini berisi tahapan pengembangan aplikasi menggunakan **Laravel 13** dan **Livewire 4**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Tujuan repository ini adalah sebagai media pembelajaran yang memungkinkan peserta mengikuti proses pengembangan aplikasi secara bertahap. Setiap materi disimpan dalam bentuk **commit Git**, sehingga Anda dapat melihat perkembangan aplikasi dari awal hingga akhir sesuai urutan pertemuan.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Teknologi yang Digunakan
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Laravel 13
+* Livewire 4
+* Tailwind CSS
+* MySQL/MariaDB
+* DDEV (Opsional)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## Cara Mengikuti Materi
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Setiap materi disimpan dalam commit yang berbeda.
+
+Lihat daftar commit:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git log --oneline
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Contoh hasil:
 
-## Contributing
+```text
+a1b2c3d Pertemuan 1 - Pengenalan
+d4e5f6g Pertemuan 2 - Tambah Data
+h7i8j9k Pertemuan 3 - Tampil Data
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Untuk berpindah ke commit tertentu:
 
-## Code of Conduct
+```bash
+git checkout <commit-id>
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Contoh:
 
-## Security Vulnerabilities
+```bash
+git checkout a1b2c3d
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Jika ingin kembali ke branch utama:
 
-## License
+```bash
+git checkout main
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Atau:
+
+```bash
+git switch main
+```
+
+---
+
+## Materi Perkuliahan
+
+### Pertemuan 1 - Pengenalan
+
+Materi:
+https://docs.google.com/document/d/1_v7oMm6kr5FridpEdNfYvLeemiRiMIUy/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 2 - Tambah Data
+
+Materi:
+https://docs.google.com/document/d/19WuoR62O0h5DNsotLM_YgMQAnWGh2sNK/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 3 - Tampil Data
+
+Materi:
+https://docs.google.com/document/d/1Q6M6sVtQUVCmnkMlalhvz-e12Z5vjxjV/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 4 - Update Data dan Modal
+
+Materi:
+https://docs.google.com/document/d/15kLTqBzJbn6pFhNIrU_XI44cu0H9_Skb/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 5
+
+Materi akan ditambahkan pada pertemuan berikutnya.
+
+---
+
+### Pertemuan 6 - Delete Data
+
+Materi:
+https://docs.google.com/document/d/1ZGqBRPAVaBUcXFEgVPMaCV_JE0M3Do0I/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 7 - Upload Gambar
+
+Materi:
+https://docs.google.com/document/d/1vwBctCnQFQDAKX5zr6PExMQIvkXAsdhi/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 8 - Layout
+
+Materi:
+https://docs.google.com/document/d/1w_e58NyGnFnGyR7GKazQEC0_IM82xMtZ/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+### Pertemuan 9 - Autentikasi
+
+Materi:
+https://docs.google.com/document/d/10dnykN0xqwdvO8SHBnYk2c0sIbNwUFWC/edit?usp=drive_link&ouid=104225670723013182666&rtpof=true&sd=true
+
+---
+
+## Menjalankan Project
+
+Clone repository:
+
+```bash
+git clone <repository-url>
+```
+
+Masuk ke folder project:
+
+```bash
+cd nama-project
+```
+
+Install dependency:
+
+```bash
+composer install
+npm install
+```
+
+Salin file environment:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+Konfigurasi database pada file `.env`, kemudian jalankan migrasi:
+
+```bash
+php artisan migrate
+```
+
+Jalankan aplikasi:
+
+```bash
+composer run dev
+```
+
+atau
+
+```bash
+php artisan serve
+```
+
+---
+
+## Tujuan Pembelajaran
+
+Setelah mengikuti seluruh materi, peserta diharapkan mampu:
+
+* Memahami konsep dasar Laravel 13
+* Menggunakan Livewire 4 untuk membangun aplikasi modern
+* Melakukan operasi CRUD
+* Menggunakan modal pada Livewire
+* Mengelola upload file dan gambar
+* Membuat layout aplikasi
+* Mengimplementasikan autentikasi pengguna
+* Mengembangkan aplikasi berbasis Laravel secara bertahap dan terstruktur
+
+---
+
+Selamat belajar dan bereksperimen dengan Laravel 13 dan Livewire 4.
+
