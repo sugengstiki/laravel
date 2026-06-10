@@ -97,9 +97,11 @@ overflow-y-auto h-full w-full">
             </div>
         </div>
     </div>
+    @can('create', \App\Models\Feedback::class)
     <button wire:click="tambah" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Tambah Feedback
     </button>
+    @endcan
     <div wire:show="showModal" class="fixed inset-0 bg-gray-600/80 overflow-y-auto h-full w-full">
         <div class="relative top-20 mx-auto p-6 max-w-md">
             <div class="bg-white rounded-3xl shadow-lg p-8">
@@ -130,12 +132,16 @@ overflow-y-auto h-full w-full">
                     @endif
                 </td>
                 <td>
+                    @can('update', $item)
                     <button wire:click="edit({{ $item->id }})" class="text-blue-500 hover:text-blue-700">
                         Edit
                     </button>
+                    @endcan
+                    @can('delete', $item)
                     <button wire:click="confirmDelete({{ $item->id }})" class="ml-2 text-red-500 hover:text-red-700">
                         Hapus
                     </button>
+                    @endcan
                 </td>
             </tr>
             @endforeach

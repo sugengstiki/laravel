@@ -40,6 +40,7 @@ new class extends Component
     public function save()
     {
         if ($this->editId) {
+            $this->authorize('update', $feedback);
             $feedback = Feedback::findOrFail($this->editId);
             $data = [
                 'name' => $this->name,
@@ -53,6 +54,7 @@ new class extends Component
             }
             $feedback->update($data);
         } else {
+            $this->authorize('create', Feedback::class);
             $data = [
                 'name' => $this->name,
                 'email' => $this->email,
