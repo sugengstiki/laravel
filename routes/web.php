@@ -6,4 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('dashboard');
 
-Route::livewire('/feedback', 'feedback.tampil')->name('feedback');
+Route::middleware(['auth'])->group(function () {
+    Route::livewire('/feedback', 'feedback.tampil')->name('feedback');
+});

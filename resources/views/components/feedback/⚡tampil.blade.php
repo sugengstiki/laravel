@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Feedback;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
